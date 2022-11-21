@@ -17,7 +17,7 @@ if (process.platform === 'win32') {
 
 function main() {
   console.log('Running ncmake ' + args.join(' '));
-  let { status } = spawnSync('ncmake', args, {
+  let { status } = spawnSync('cmake', args, {
     shell: true,
     stdio: 'inherit'
   });
@@ -26,7 +26,7 @@ function main() {
   }
 
   console.log('Running ncmake build');
-  status = spawnSync('ncmake', ['build'], {
+  status = spawnSync('cmake', ['build'], {
     shell: true,
     stdio: 'inherit'
   }).status;
